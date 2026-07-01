@@ -21,6 +21,7 @@ export class TableCuritibaComponent {
   ];
 
   servicosData = [
+    { servico: "Alteração de Potência/Cilindrada - Automóvel, Camioneta, Caminhonete e Utilitário", valor: "R$ 1.100,00" },
     { servico: "Basculante (Periódico - Res 859/21 Contran)", valor: "R$ 550,00" },
     { servico: "Laudo Escolar", valor: "R$ 500,00" },
     { servico: "Laudo Seguradora/URBS (Taxi)", valor: "Preço Sinistro" },

@@ -22,6 +22,7 @@ export class TableCampoLargoComponent {
   ];
 
   servicosData = [
+    { servico: 'Alteração de Potência/Cilindrada - Automóvel, Camioneta, Caminhonete e Utilitário', valor: 'R$ 1.100,00' },
     { servico: 'Laudo Escolar', valor: 'R$ 500,00' },
     { servico: 'Laudo Seguradora/URBS (Taxi)', valor: 'Preço Sinistro' },
     { servico: 'Laudo Opacidade + Ruído', valor: 'R$ 200,00' },
