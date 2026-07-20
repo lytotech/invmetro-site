@@ -7,10 +7,12 @@
           <h1 class="hero-title">Inspeção Veicular com Qualidade e Confiança</h1>
           <p class="hero-subtitle">Mais de 16 anos de experiência em inspeções técnicas. Acreditada pela CGCRE e licenciada pelo SENATRAN para todo o Brasil.</p>
           <div class="hero-buttons">
-            <a class="btn btn-light btn-lg" routerLink="/contato">
+            <a class="btn btn-light btn-lg" routerLink="/contato" appTrackClick="select_content"
+               [analyticsParams]="{ event_category: 'cta', event_label: 'Agendar Inspeção', content_type: 'internal_cta', page_section: 'home_hero' }">
               <i class="fas fa-calendar-alt me-2"></i>Agendar Inspeção
             </a>
-            <a class="btn btn-outline-light btn-lg" routerLink="/servicos">
+            <a class="btn btn-outline-light btn-lg" routerLink="/servicos" appTrackClick="select_content"
+               [analyticsParams]="{ event_category: 'cta', event_label: 'Nossos Serviços', content_type: 'internal_cta', page_section: 'home_hero' }">
               <i class="fas fa-list me-2"></i>Nossos Serviços
             </a>
           </div>
@@ -113,7 +115,8 @@
               <li><i class="fas fa-check"></i> Inclusão e retirada do kit</li>
               <li><i class="fas fa-check"></i> Avaliação completa do sistema</li>
             </ul>
-            <a routerLink="/servicos" class="btn btn-success">
+            <a routerLink="/servicos" class="btn btn-success" appTrackClick="select_content"
+               [analyticsParams]="{ event_category: 'service_card', event_label: 'Inspeção GNV', content_type: 'service_cta', page_section: 'home_services' }">
               <i class="fas fa-arrow-right me-2"></i>Saiba mais
             </a>
           </div>
@@ -133,7 +136,8 @@
               <li><i class="fas fa-check"></i> Regularização de bloqueios</li>
               <li><i class="fas fa-check"></i> Liberação para circulação</li>
             </ul>
-            <a routerLink="/servicos" class="btn btn-success">
+            <a routerLink="/servicos" class="btn btn-success" appTrackClick="select_content"
+               [analyticsParams]="{ event_category: 'service_card', event_label: 'Veículo Sinistro', content_type: 'service_cta', page_section: 'home_services' }">
               <i class="fas fa-arrow-right me-2"></i>Saiba mais
             </a>
           </div>
@@ -153,7 +157,8 @@
               <li><i class="fas fa-check"></i> Modificações estruturais</li>
               <li><i class="fas fa-check"></i> Adaptações especiais</li>
             </ul>
-            <a routerLink="/servicos" class="btn btn-success">
+            <a routerLink="/servicos" class="btn btn-success" appTrackClick="select_content"
+               [analyticsParams]="{ event_category: 'service_card', event_label: 'Veículo Modificado', content_type: 'service_cta', page_section: 'home_services' }">
               <i class="fas fa-arrow-right me-2"></i>Saiba mais
             </a>
           </div>
@@ -163,7 +168,8 @@
 
     <div class="row mt-4">
       <div class="col-12 text-center">
-        <a routerLink="/servicos" class="btn btn-outline-success btn-lg">
+        <a routerLink="/servicos" class="btn btn-outline-success btn-lg" appTrackClick="select_content"
+           [analyticsParams]="{ event_category: 'cta', event_label: 'Ver Todos os Serviços', content_type: 'internal_cta', page_section: 'home_services' }">
           <i class="fas fa-list me-2"></i>Ver Todos os Serviços
         </a>
       </div>
@@ -213,7 +219,8 @@
             </div>
           </div>
           <div class="about-actions">
-            <a routerLink="/sobre" class="btn btn-success btn-lg">
+            <a routerLink="/sobre" class="btn btn-success btn-lg" appTrackClick="select_content"
+               [analyticsParams]="{ event_category: 'cta', event_label: 'Conheça Nossa História', content_type: 'internal_cta', page_section: 'home_about' }">
               <i class="fas fa-info-circle me-2"></i>Conheça Nossa História
             </a>
           </div>
@@ -238,13 +245,16 @@
         <h3 class="cta-title">Pronto para agendar sua inspeção?</h3>
         <p class="cta-subtitle">Entre em contato conosco e garanta a regularização do seu veículo</p>
         <div class="cta-buttons">
-          <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-light btn-lg">
+          <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-light btn-lg" appTrackClick="generate_lead"
+             [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Curitiba', contact_method: 'whatsapp', location: 'curitiba', page_section: 'home_cta' }">
             <i class="fab fa-whatsapp me-2"></i>WhatsApp Curitiba
           </a>
-          <a href="https://api.whatsapp.com/send?phone=554135551300" class="btn btn-outline-light btn-lg">
+          <a href="https://api.whatsapp.com/send?phone=554135551300" class="btn btn-outline-light btn-lg" appTrackClick="generate_lead"
+             [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Campo Largo', contact_method: 'whatsapp', location: 'campo_largo', page_section: 'home_cta' }">
             <i class="fab fa-whatsapp me-2"></i>WhatsApp Campo Largo
           </a>
-          <a routerLink="/contato" class="btn btn-light btn-lg">
+          <a routerLink="/contato" class="btn btn-light btn-lg" appTrackClick="select_content"
+             [analyticsParams]="{ event_category: 'cta', event_label: 'Outras Formas de Contato', content_type: 'internal_cta', page_section: 'home_cta' }">
             <i class="fas fa-phone me-2"></i>Outras Formas de Contato
           </a>
         </div>

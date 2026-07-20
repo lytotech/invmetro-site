@@ -14,6 +14,7 @@ import { SobreComponent } from './sobre/sobre.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContatoComponent } from './contato/contato.component';
 import {CommonModule, HashLocationStrategy, LocationStrategy} from "@angular/common";
+import { TrackClickDirective } from './shared/analytics/track-click.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {CommonModule, HashLocationStrategy, LocationStrategy} from "@angular/com
     TableCampoLargoComponent,
     SobreComponent,
     FaqComponent,
-    ContatoComponent
+    ContatoComponent,
+    TrackClickDirective
   ],
   imports: [
     BrowserModule,
