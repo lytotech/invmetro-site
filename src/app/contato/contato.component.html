@@ -6,10 +6,12 @@
         <h1 class="display-4 fw-bold text-white mb-4">Entre em Contato</h1>
         <p class="lead text-white-50 mb-4">Estamos prontos para atender você nas nossas duas unidades em Curitiba e Campo Largo.</p>
         <div class="d-flex gap-3">
-          <button (click)="scrollToSection('contato-rapido')" class="btn btn-light">
+          <button (click)="scrollToSection('contato-rapido')" class="btn btn-light" appTrackClick="select_content"
+                  [analyticsParams]="{ event_category: 'cta', event_label: 'Fale Conosco', content_type: 'section_scroll', page_section: 'contato_hero' }">
             <i class="fas fa-phone me-2"></i>Fale Conosco
           </button>
-          <button (click)="scrollToSection('localizacao')" class="btn btn-outline-light">
+          <button (click)="scrollToSection('localizacao')" class="btn btn-outline-light" appTrackClick="select_content"
+                  [analyticsParams]="{ event_category: 'cta', event_label: 'Localização', content_type: 'section_scroll', page_section: 'contato_hero' }">
             <i class="fas fa-map-marker-alt me-2"></i>Localização
           </button>
         </div>
@@ -43,10 +45,12 @@
             <h4 class="card-title mb-3">WhatsApp</h4>
             <p class="card-text text-muted mb-4">Fale conosco pelo WhatsApp para atendimento rápido</p>
             <div class="d-grid gap-2">
-              <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-success">
+              <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-success" appTrackClick="generate_lead"
+                 [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Contato Curitiba', contact_method: 'whatsapp', location: 'curitiba', page_section: 'contato_rapido' }">
                 <i class="fab fa-whatsapp me-2"></i>Curitiba: (41) 3357-3939
               </a>
-              <a href="https://api.whatsapp.com/send?phone=554135551300" class="btn btn-outline-success">
+              <a href="https://api.whatsapp.com/send?phone=554135551300" class="btn btn-outline-success" appTrackClick="generate_lead"
+                 [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Contato Campo Largo', contact_method: 'whatsapp', location: 'campo_largo', page_section: 'contato_rapido' }">
                 <i class="fab fa-whatsapp me-2"></i>Campo Largo: (41) 3555-1300
               </a>
             </div>
@@ -63,10 +67,12 @@
             <h4 class="card-title mb-3">E-mail</h4>
             <p class="card-text text-muted mb-4">Envie suas dúvidas por e-mail</p>
             <div class="d-grid gap-2">
-              <a href="mailto:invmetrocuritiba@gmail.com" class="btn btn-success">
+              <a href="mailto:invmetrocuritiba@gmail.com" class="btn btn-success" appTrackClick="generate_lead"
+                 [analyticsParams]="{ event_category: 'lead', event_label: 'E-mail Contato Curitiba', contact_method: 'email', location: 'curitiba', page_section: 'contato_rapido' }">
                 <i class="fas fa-envelope me-2"></i>invmetrocuritiba&#64;gmail.com
               </a>
-              <a href="mailto:invmetrocampolargo@gmail.com" class="btn btn-outline-success">
+              <a href="mailto:invmetrocampolargo@gmail.com" class="btn btn-outline-success" appTrackClick="generate_lead"
+                 [analyticsParams]="{ event_category: 'lead', event_label: 'E-mail Contato Campo Largo', contact_method: 'email', location: 'campo_largo', page_section: 'contato_rapido' }">
                 <i class="fas fa-envelope me-2"></i>invmetrocampolargo&#64;gmail.com
               </a>
             </div>
@@ -114,7 +120,8 @@
                 </div>
                 <div class="detail-content">
                   <h6>WhatsApp</h6>
-                  <p><a href="https://api.whatsapp.com/send?phone=554133573939" class="contact-link">(41) 3357-3939</a></p>
+                  <p><a href="https://api.whatsapp.com/send?phone=554133573939" class="contact-link" appTrackClick="generate_lead"
+                        [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Unidade Curitiba', contact_method: 'whatsapp', location: 'curitiba', page_section: 'contato_localizacao' }">(41) 3357-3939</a></p>
                 </div>
               </div>
               <div class="detail-item">
@@ -123,7 +130,8 @@
                 </div>
                 <div class="detail-content">
                   <h6>E-mail</h6>
-                  <p><a href="mailto:invmetrocuritiba@gmail.com" class="contact-link">invmetrocuritiba&#64;gmail.com</a></p>
+                  <p><a href="mailto:invmetrocuritiba@gmail.com" class="contact-link" appTrackClick="generate_lead"
+                        [analyticsParams]="{ event_category: 'lead', event_label: 'E-mail Unidade Curitiba', contact_method: 'email', location: 'curitiba', page_section: 'contato_localizacao' }">invmetrocuritiba&#64;gmail.com</a></p>
                 </div>
               </div>
             </div>
@@ -163,7 +171,8 @@
                 </div>
                 <div class="detail-content">
                   <h6>WhatsApp</h6>
-                  <p><a href="https://api.whatsapp.com/send?phone=554135551300" class="contact-link">(41) 3555-1300</a></p>
+                  <p><a href="https://api.whatsapp.com/send?phone=554135551300" class="contact-link" appTrackClick="generate_lead"
+                        [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Unidade Campo Largo', contact_method: 'whatsapp', location: 'campo_largo', page_section: 'contato_localizacao' }">(41) 3555-1300</a></p>
                 </div>
               </div>
               <div class="detail-item">
@@ -172,7 +181,8 @@
                 </div>
                 <div class="detail-content">
                   <h6>E-mail</h6>
-                  <p><a href="mailto:invmetrocampolargo@gmail.com" class="contact-link">invmetrocampolargo&#64;gmail.com</a></p>
+                  <p><a href="mailto:invmetrocampolargo@gmail.com" class="contact-link" appTrackClick="generate_lead"
+                        [analyticsParams]="{ event_category: 'lead', event_label: 'E-mail Unidade Campo Largo', contact_method: 'email', location: 'campo_largo', page_section: 'contato_localizacao' }">invmetrocampolargo&#64;gmail.com</a></p>
                 </div>
               </div>
             </div>
@@ -188,4 +198,3 @@
     </div>
   </div>
 </section>
-

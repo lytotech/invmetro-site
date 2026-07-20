@@ -5,10 +5,12 @@
       <h1 class="hero-title">Nossos Serviços</h1>
       <p class="hero-subtitle">Soluções completas em inspeção veicular com qualidade e confiabilidade</p>
       <div class="hero-buttons">
-        <button (click)="scrollToSection('servicos')" class="btn btn-light">
+        <button (click)="scrollToSection('servicos')" class="btn btn-light" appTrackClick="select_content"
+                [analyticsParams]="{ event_category: 'cta', event_label: 'Ver Serviços', content_type: 'section_scroll', page_section: 'servicos_hero' }">
           <i class="fas fa-list me-2"></i>Ver Serviços
         </button>
-        <button (click)="scrollToSection('precos')" class="btn btn-outline-light">
+        <button (click)="scrollToSection('precos')" class="btn btn-outline-light" appTrackClick="select_content"
+                [analyticsParams]="{ event_category: 'cta', event_label: 'Consultar Preços', content_type: 'section_scroll', page_section: 'servicos_hero' }">
           <i class="fas fa-calculator me-2"></i>Consultar Preços
         </button>
       </div>
@@ -229,12 +231,14 @@
         <div class="pricing-navigation">
           <div class="nav nav-pills nav-justified" id="pricing-tabs" role="tablist">
             <button class="nav-link active" id="curitiba-tab" data-bs-toggle="pill" data-bs-target="#curitiba"
-                    type="button" role="tab" aria-controls="curitiba" aria-selected="true">
+                    type="button" role="tab" aria-controls="curitiba" aria-selected="true" appTrackClick="view_item"
+                    [analyticsParams]="{ event_category: 'pricing', event_label: 'Tabela Curitiba', item_name: 'precos_curitiba', location: 'curitiba' }">
               <i class="fas fa-building me-2"></i>
               Curitiba
             </button>
             <button class="nav-link" id="campo-largo-tab" data-bs-toggle="pill" data-bs-target="#campo-largo"
-                    type="button" role="tab" aria-controls="campo-largo" aria-selected="false">
+                    type="button" role="tab" aria-controls="campo-largo" aria-selected="false" appTrackClick="view_item"
+                    [analyticsParams]="{ event_category: 'pricing', event_label: 'Tabela Campo Largo', item_name: 'precos_campo_largo', location: 'campo_largo' }">
               <i class="fas fa-building me-2"></i>
               Campo Largo
             </button>
@@ -266,10 +270,12 @@
         <h3 class="cta-title">Precisa de mais informações?</h3>
         <p class="cta-subtitle">Entre em contato conosco para esclarecimentos sobre nossos serviços</p>
         <div class="cta-buttons">
-          <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-light btn-lg">
+          <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-light btn-lg" appTrackClick="generate_lead"
+             [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Serviços', contact_method: 'whatsapp', location: 'curitiba', page_section: 'servicos_cta' }">
             <i class="fab fa-whatsapp me-2"></i>WhatsApp
           </a>
-          <a routerLink="/contato" class="btn btn-outline-light btn-lg">
+          <a routerLink="/contato" class="btn btn-outline-light btn-lg" appTrackClick="select_content"
+             [analyticsParams]="{ event_category: 'cta', event_label: 'Contato Serviços', content_type: 'internal_cta', page_section: 'servicos_cta' }">
             <i class="fas fa-phone me-2"></i>Contato
           </a>
         </div>

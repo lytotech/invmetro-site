@@ -6,10 +6,12 @@
         <h1 class="display-4 fw-bold text-white mb-4">Sobre a Invmetro</h1>
         <p class="lead text-white-50 mb-4">Excelência em inspeção veicular desde 2009, com tecnologia e profissionalismo.</p>
         <div class="d-flex gap-3">
-          <button (click)="scrollToSection('nossa-historia')" class="btn btn-light">
+          <button (click)="scrollToSection('nossa-historia')" class="btn btn-light" appTrackClick="select_content"
+                  [analyticsParams]="{ event_category: 'cta', event_label: 'Nossa História', content_type: 'section_scroll', page_section: 'sobre_hero' }">
             <i class="fas fa-info-circle me-2"></i>Nossa História
           </button>
-          <a routerLink="/contato" class="btn btn-outline-light">
+          <a routerLink="/contato" class="btn btn-outline-light" appTrackClick="select_content"
+             [analyticsParams]="{ event_category: 'cta', event_label: 'Nossas Unidades', content_type: 'internal_cta', page_section: 'sobre_hero' }">
             <i class="fas fa-map-marker-alt me-2"></i>Nossas Unidades
           </a>
         </div>
@@ -268,7 +270,8 @@
               </div>
               <div class="detail-content">
                 <strong>WhatsApp:</strong><br>
-                <a href="https://api.whatsapp.com/send?phone=554133573939" class="contact-link">(41) 3357-3939</a>
+                <a href="https://api.whatsapp.com/send?phone=554133573939" class="contact-link" appTrackClick="generate_lead"
+                   [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Sobre Curitiba', contact_method: 'whatsapp', location: 'curitiba', page_section: 'sobre_unidades' }">(41) 3357-3939</a>
               </div>
             </div>
           </div>
@@ -316,7 +319,8 @@
               </div>
               <div class="detail-content">
                 <strong>WhatsApp:</strong><br>
-                <a href="https://api.whatsapp.com/send?phone=554135551300" class="contact-link">(41) 3555-1300</a>
+                <a href="https://api.whatsapp.com/send?phone=554135551300" class="contact-link" appTrackClick="generate_lead"
+                   [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Sobre Campo Largo', contact_method: 'whatsapp', location: 'campo_largo', page_section: 'sobre_unidades' }">(41) 3555-1300</a>
               </div>
             </div>
           </div>
@@ -334,10 +338,12 @@
         <h3 class="h3 mb-3 text-white">Pronto para agendar sua inspeção?</h3>
         <p class="lead mb-4 text-white-50">Entre em contato conosco e garante a segurança do seu veículo</p>
         <div class="d-flex gap-3 justify-content-center">
-          <a routerLink="/contato" class="btn btn-light">
+          <a routerLink="/contato" class="btn btn-light" appTrackClick="select_content"
+             [analyticsParams]="{ event_category: 'cta', event_label: 'Entre em Contato Sobre', content_type: 'internal_cta', page_section: 'sobre_cta' }">
             <i class="fas fa-phone me-2"></i>Entre em Contato
           </a>
-          <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-outline-light">
+          <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-outline-light" appTrackClick="generate_lead"
+             [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Sobre CTA', contact_method: 'whatsapp', location: 'curitiba', page_section: 'sobre_cta' }">
             <i class="fab fa-whatsapp me-2"></i>WhatsApp
           </a>
         </div>
