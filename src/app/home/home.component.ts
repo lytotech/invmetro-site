@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  readonly foundingYear = 2009;
+  readonly yearsOfExperience = new Date().getFullYear() - this.foundingYear;
+
 }

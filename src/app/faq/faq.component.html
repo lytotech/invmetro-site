@@ -1,38 +1,22 @@
 <!-- Hero Section -->
-<div class="hero-section">
-  <div class="container">
-    <div class="row align-items-center min-vh-40">
-      <div class="col-lg-6">
-        <h1 class="display-4 fw-bold text-white mb-4">Perguntas Frequentes</h1>
-        <p class="lead text-white-50 mb-4">Tire todas as suas dúvidas sobre nossos serviços de inspeção veicular.</p>
-        <div class="d-flex gap-3">
-          <button (click)="scrollToSection('faq-content')" class="btn btn-light" appTrackClick="select_content"
-                  [analyticsParams]="{ event_category: 'cta', event_label: 'Ver Perguntas', content_type: 'section_scroll', page_section: 'faq_hero' }">
-            <i class="fas fa-question-circle me-2"></i>Ver Perguntas
-          </button>
-          <a routerLink="/contato" class="btn btn-outline-light" appTrackClick="select_content"
-             [analyticsParams]="{ event_category: 'cta', event_label: 'Fale Conosco FAQ Hero', content_type: 'internal_cta', page_section: 'faq_hero' }">
-            <i class="fas fa-phone me-2"></i>Fale Conosco
-          </a>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="hero-image text-center">
-          <i class="fas fa-question-circle fa-10x text-white opacity-25"></i>
-        </div>
-      </div>
-    </div>
+<inv-hero title="Perguntas Frequentes" subtitle="Tire todas as suas dúvidas sobre nossos serviços de inspeção veicular." icon="fa-question-circle">
+  <div hero-actions class="d-flex gap-3">
+    <button (click)="scrollToSection('faq-content')" class="btn btn-light" appTrackClick="select_content"
+            [analyticsParams]="{ event_category: 'cta', event_label: 'Ver Perguntas', content_type: 'section_scroll', page_section: 'faq_hero' }">
+      <i class="fas fa-question-circle me-2" aria-hidden="true"></i>Ver Perguntas
+    </button>
+    <a routerLink="/contato" class="btn btn-outline-light" appTrackClick="select_content"
+       [analyticsParams]="{ event_category: 'cta', event_label: 'Fale Conosco FAQ Hero', content_type: 'internal_cta', page_section: 'faq_hero' }">
+      <i class="fas fa-phone me-2" aria-hidden="true"></i>Fale Conosco
+    </a>
   </div>
-</div>
+</inv-hero>
 
 <!-- FAQ Content -->
 <section id="faq-content" class="py-5">
   <div class="container">
     <div class="row">
-      <div class="col-12 text-center mb-5">
-        <h2 class="display-5 fw-bold text-success">Dúvidas Frequentes</h2>
-        <p class="lead text-muted">Encontre respostas para as principais perguntas sobre inspeção veicular</p>
-      </div>
+      <inv-section-header title="Perguntas por Categoria" subtitle="Encontre respostas para as principais perguntas sobre inspeção veicular"></inv-section-header>
     </div>
 
     <div class="row justify-content-center">
@@ -40,26 +24,28 @@
         <div class="faq-wrapper">
           <div class="accordion" id="faqAccordion">
 
+            <h3 class="faq-category-title"><i class="fas fa-calendar-check" aria-hidden="true"></i> Agendamento e Pagamento</h3>
+
             <!-- FAQ Item 1 -->
             <div class="faq-item">
               <div class="faq-header" id="faq1">
                 <button class="faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1" appTrackClick="faq_open"
                         [analyticsParams]="{ event_category: 'faq', event_label: 'Vocês trabalham com agendamento?', faq_category: 'Agendamento e Pagamento' }">
                   <div class="faq-icon">
-                    <i class="fas fa-calendar-alt"></i>
+                    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
                   </div>
                   <div class="faq-title">
                     <h5>Vocês trabalham com agendamento?</h5>
                   </div>
                   <div class="faq-toggle">
-                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-plus" aria-hidden="true"></i>
                   </div>
                 </button>
               </div>
               <div id="collapse1" class="collapse" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
                 <div class="faq-body">
                   <p>Sim, trabalhamos com agendamento para sua comodidade. <a routerLink="/contato" class="faq-link" appTrackClick="select_content"
-                                                                               [analyticsParams]="{ event_category: 'cta', event_label: 'Contato via FAQ Agendamento', content_type: 'internal_cta', page_section: 'faq_answer' }">Clique aqui para entrar em contato</a> e agendar sua inspeção.</p>
+                                                                               [analyticsParams]="{ event_category: 'cta', event_label: 'Contato via FAQ Agendamento', content_type: 'internal_cta', page_section: 'faq_answer' }">fale com a Invmetro</a> para agendar sua inspeção.</p>
                 </div>
               </div>
             </div>
@@ -70,13 +56,13 @@
                 <button class="faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2" appTrackClick="faq_open"
                         [analyticsParams]="{ event_category: 'faq', event_label: 'Qual a forma de pagamento? Parcela?', faq_category: 'Agendamento e Pagamento' }">
                   <div class="faq-icon">
-                    <i class="fas fa-credit-card"></i>
+                    <i class="fas fa-credit-card" aria-hidden="true"></i>
                   </div>
                   <div class="faq-title">
                     <h5>Qual a forma de pagamento? Parcela?</h5>
                   </div>
                   <div class="faq-toggle">
-                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-plus" aria-hidden="true"></i>
                   </div>
                 </button>
               </div>
@@ -94,19 +80,21 @@
               </div>
             </div>
 
+            <h3 class="faq-category-title"><i class="fas fa-search" aria-hidden="true"></i> Processo de Inspeção</h3>
+
             <!-- FAQ Item 3 -->
             <div class="faq-item">
               <div class="faq-header" id="faq3">
                 <button class="faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3" appTrackClick="faq_open"
                         [analyticsParams]="{ event_category: 'faq', event_label: 'Se o veículo reprovar, terei prazo?', faq_category: 'Processo de Inspeção' }">
                   <div class="faq-icon">
-                    <i class="fas fa-redo-alt"></i>
+                    <i class="fas fa-redo-alt" aria-hidden="true"></i>
                   </div>
                   <div class="faq-title">
                     <h5>Se o veículo reprovar, terei prazo? Pago novamente para retornar?</h5>
                   </div>
                   <div class="faq-toggle">
-                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-plus" aria-hidden="true"></i>
                   </div>
                 </button>
               </div>
@@ -124,13 +112,13 @@
                 <button class="faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4" appTrackClick="faq_open"
                         [analyticsParams]="{ event_category: 'faq', event_label: 'Qual o horário de funcionamento?', faq_category: 'Processo de Inspeção' }">
                   <div class="faq-icon">
-                    <i class="fas fa-clock"></i>
+                    <i class="fas fa-clock" aria-hidden="true"></i>
                   </div>
                   <div class="faq-title">
                     <h5>Qual o horário de funcionamento?</h5>
                   </div>
                   <div class="faq-toggle">
-                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-plus" aria-hidden="true"></i>
                   </div>
                 </button>
               </div>
@@ -138,11 +126,11 @@
                 <div class="faq-body">
                   <div class="schedule-grid">
                     <div class="schedule-item">
-                      <h6><i class="fas fa-map-marker-alt me-2"></i>Invmetro Curitiba</h6>
+                      <h6><i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>Invmetro Curitiba</h6>
                       <p>Segunda a sexta: 08h às 12h das 13h30min às 17h30min</p>
                     </div>
                     <div class="schedule-item">
-                      <h6><i class="fas fa-map-marker-alt me-2"></i>Invmetro Campo Largo</h6>
+                      <h6><i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>Invmetro Campo Largo</h6>
                       <p>Segunda a sexta: 08h30min às 12h das 13h às 17h30min</p>
                     </div>
                   </div>
@@ -156,13 +144,13 @@
                 <button class="faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5" appTrackClick="faq_open"
                         [analyticsParams]="{ event_category: 'faq', event_label: 'Quais itens são verificados na inspeção?', faq_category: 'Processo de Inspeção' }">
                   <div class="faq-icon">
-                    <i class="fas fa-search"></i>
+                    <i class="fas fa-search" aria-hidden="true"></i>
                   </div>
                   <div class="faq-title">
                     <h5>Quais itens são verificados na inspeção?</h5>
                   </div>
                   <div class="faq-toggle">
-                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-plus" aria-hidden="true"></i>
                   </div>
                 </button>
               </div>
@@ -208,19 +196,21 @@
               </div>
             </div>
 
+            <h3 class="faq-category-title"><i class="fas fa-file-alt" aria-hidden="true"></i> Documentação e Autorizações</h3>
+
             <!-- FAQ Item 6 -->
             <div class="faq-item">
               <div class="faq-header" id="faq6">
                 <button class="faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6" appTrackClick="faq_open"
                         [analyticsParams]="{ event_category: 'faq', event_label: 'Quais documentos são necessários?', faq_category: 'Documentação e Autorizações' }">
                   <div class="faq-icon">
-                    <i class="fas fa-file-alt"></i>
+                    <i class="fas fa-file-alt" aria-hidden="true"></i>
                   </div>
                   <div class="faq-title">
                     <h5>Quais documentos são necessários?</h5>
                   </div>
                   <div class="faq-toggle">
-                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-plus" aria-hidden="true"></i>
                   </div>
                 </button>
               </div>
@@ -230,7 +220,7 @@
                   <div class="documents-list">
                     <div class="document-item">
                       <div class="document-icon">
-                        <i class="fas fa-id-card"></i>
+                        <i class="fas fa-id-card" aria-hidden="true"></i>
                       </div>
                       <div class="document-info">
                         <h6>CRLV/CRV</h6>
@@ -239,7 +229,7 @@
                     </div>
                     <div class="document-item">
                       <div class="document-icon">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-user" aria-hidden="true"></i>
                       </div>
                       <div class="document-info">
                         <h6>RG/CPF ou CNH</h6>
@@ -248,7 +238,7 @@
                     </div>
                     <div class="document-item">
                       <div class="document-icon">
-                        <i class="fas fa-certificate"></i>
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
                       </div>
                       <div class="document-info">
                         <h6>Selo de inspeção anterior</h6>
@@ -257,7 +247,7 @@
                     </div>
                     <div class="document-item">
                       <div class="document-icon">
-                        <i class="fas fa-receipt"></i>
+                        <i class="fas fa-receipt" aria-hidden="true"></i>
                       </div>
                       <div class="document-info">
                         <h6>Notas fiscais</h6>
@@ -275,13 +265,13 @@
                 <button class="faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7" appTrackClick="faq_open"
                         [analyticsParams]="{ event_category: 'faq', event_label: 'Preciso de autorização do DETRAN?', faq_category: 'Documentação e Autorizações' }">
                   <div class="faq-icon">
-                    <i class="fas fa-stamp"></i>
+                    <i class="fas fa-stamp" aria-hidden="true"></i>
                   </div>
                   <div class="faq-title">
                     <h5>Preciso de autorização do DETRAN?</h5>
                   </div>
                   <div class="faq-toggle">
-                    <i class="fas fa-plus"></i>
+                    <i class="fas fa-plus" aria-hidden="true"></i>
                   </div>
                 </button>
               </div>
@@ -290,19 +280,19 @@
                   <p><strong>Autorização prévia é obrigatória</strong> para os seguintes casos:</p>
                   <div class="authorization-cases">
                     <div class="case-item">
-                      <i class="fas fa-car-crash"></i>
+                      <i class="fas fa-car-crash" aria-hidden="true"></i>
                       <span>Veículos sinistrados</span>
                     </div>
                     <div class="case-item">
-                      <i class="fas fa-wrench"></i>
+                      <i class="fas fa-wrench" aria-hidden="true"></i>
                       <span>Veículos modificados</span>
                     </div>
                     <div class="case-item">
-                      <i class="fas fa-plus-circle"></i>
+                      <i class="fas fa-plus-circle" aria-hidden="true"></i>
                       <span>Inclusão de kit GNV</span>
                     </div>
                     <div class="case-item">
-                      <i class="fas fa-minus-circle"></i>
+                      <i class="fas fa-minus-circle" aria-hidden="true"></i>
                       <span>Retirada de kit GNV</span>
                     </div>
                   </div>
@@ -318,23 +308,13 @@
 </section>
 
 <!-- CTA Section -->
-<section class="cta-section py-5 bg-light">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h3 class="h4 mb-3">Ainda tem dúvidas?</h3>
-        <p class="lead mb-4">Nossa equipe está pronta para ajudá-lo</p>
-        <div class="d-flex gap-3 justify-content-center">
-          <a routerLink="/contato" class="btn btn-success" appTrackClick="select_content"
-             [analyticsParams]="{ event_category: 'cta', event_label: 'Entre em Contato FAQ', content_type: 'internal_cta', page_section: 'faq_cta' }">
-            <i class="fas fa-phone me-2"></i>Entre em Contato
-          </a>
-          <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-outline-success" appTrackClick="generate_lead"
-             [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp FAQ CTA', contact_method: 'whatsapp', location: 'curitiba', page_section: 'faq_cta' }">
-            <i class="fab fa-whatsapp me-2"></i>WhatsApp
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<inv-cta variant="light" title="Ainda tem dúvidas?" subtitle="Nossa equipe está pronta para ajudá-lo">
+  <a routerLink="/contato" class="btn btn-success" appTrackClick="select_content"
+     [analyticsParams]="{ event_category: 'cta', event_label: 'Entre em Contato FAQ', content_type: 'internal_cta', page_section: 'faq_cta' }">
+    <i class="fas fa-phone me-2" aria-hidden="true"></i>Falar com um Especialista
+  </a>
+  <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-outline-success" appTrackClick="generate_lead"
+     [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp FAQ CTA', contact_method: 'whatsapp', location: 'curitiba', page_section: 'faq_cta' }">
+    <i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Chamar no WhatsApp
+  </a>
+</inv-cta>

@@ -1,0 +1,14 @@
+:host {
+  display: contents;
+}
+
+.section-title {
+  font-size: var(--inv-text-h2);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--inv-muted);
+  margin-bottom: 2rem;
+}

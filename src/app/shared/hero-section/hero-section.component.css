@@ -1,0 +1,39 @@
+.hero-section {
+  min-height: 40vh;
+  background:
+    linear-gradient(100deg, rgba(6, 35, 21, 0.96) 0%, rgba(0, 104, 48, 0.84) 100%);
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.min-vh-40 {
+  min-height: 40vh;
+}
+
+.hero-image {
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 45vh;
+    text-align: center;
+  }
+
+  .hero-section .col-lg-6:first-child {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    min-height: 35vh;
+  }
+}

@@ -7,11 +7,11 @@
       <div class="hero-buttons">
         <button (click)="scrollToSection('servicos')" class="btn btn-light" appTrackClick="select_content"
                 [analyticsParams]="{ event_category: 'cta', event_label: 'Ver Serviços', content_type: 'section_scroll', page_section: 'servicos_hero' }">
-          <i class="fas fa-list me-2"></i>Ver Serviços
+          <i class="fas fa-list me-2" aria-hidden="true"></i>Ver Serviços
         </button>
         <button (click)="scrollToSection('precos')" class="btn btn-outline-light" appTrackClick="select_content"
                 [analyticsParams]="{ event_category: 'cta', event_label: 'Consultar Preços', content_type: 'section_scroll', page_section: 'servicos_hero' }">
-          <i class="fas fa-calculator me-2"></i>Consultar Preços
+          <i class="fas fa-calculator me-2" aria-hidden="true"></i>Consultar Preços
         </button>
       </div>
     </div>
@@ -22,194 +22,15 @@
 <section id="servicos" class="services-section">
   <div class="container">
     <div class="row">
-      <div class="col-12 text-center mb-5">
-        <h2 class="section-title">Nossos Serviços</h2>
-        <p class="section-subtitle">Conheça todos os tipos de inspeção veicular que oferecemos</p>
-      </div>
+      <inv-section-header styleVariant="plain" title="O Que Oferecemos" subtitle="Conheça todos os tipos de inspeção veicular que oferecemos"></inv-section-header>
     </div>
 
-    <div class="row g-4">
-      <!-- Alteração de Potência/Cilindrada -->
-      <div class="col-lg-12 mb-4">
-        <div class="service-card featured-service">
-          <div class="service-icon">
-            <i class="fas fa-tachometer-alt"></i>
-          </div>
-          <h3 class="service-title">Alteração de Potência/Cilindrada</h3>
-          <p class="service-description">
-            Inspeção para qualquer diminuição ou qualquer aumento até 10% superior ao original,
-            conforme Anexo V da Resolução 916/22.
-          </p>
-          <div class="price-highlight">
-            <span class="price-label">Automóvel, Camioneta, Caminhonete e Utilitário</span>
-            <span class="price-value">R$ 1.100,00</span>
-          </div>
-          <div class="service-details">
-            <h5>Documentos necessários:</h5>
-            <ul class="docs-list">
-              <li><i class="fas fa-check"></i> CRLV/CRV ou Nota Fiscal</li>
-              <li><i class="fas fa-check"></i> RG/CPF ou CNH do proprietário</li>
-              <li><i class="fas fa-check"></i> Notas fiscais da modificação</li>
-              <li><i class="fas fa-check"></i> Ensaio do Dinamômetro</li>
-              <li><i class="fas fa-check"></i> ART do Engenheiro Mecânico</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Veículo Sinistro -->
-      <div class="col-lg-6 col-md-6 mb-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-car-crash"></i>
-          </div>
-          <h3 class="service-title">Veículo Sinistro</h3>
-          <p class="service-description">
-            Inspeção para veículos que se envolveram em acidentes ou foram bloqueados por seguradoras.
-          </p>
-          <div class="service-details">
-            <h5>Documentos necessários:</h5>
-            <ul class="docs-list">
-              <li><i class="fas fa-check"></i> CRLV/CRV ou Nota Fiscal</li>
-              <li><i class="fas fa-check"></i> RG/CPF ou CNH do proprietário</li>
-              <li><i class="fas fa-check"></i> Notas fiscais dos reparos</li>
-              <li><i class="fas fa-check"></i> B.O. (se sem placas)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- GNV Periódica -->
-      <div class="col-lg-6 col-md-6 mb-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-leaf"></i>
-          </div>
-          <h3 class="service-title">GNV Periódica</h3>
-          <p class="service-description">
-            Inspeção obrigatória anual para veículos com sistema de GNV instalado.
-          </p>
-          <div class="service-details">
-            <h5>Documentos necessários:</h5>
-            <ul class="docs-list">
-              <li><i class="fas fa-check"></i> CRLV/CRV ou Nota Fiscal</li>
-              <li><i class="fas fa-check"></i> RG/CPF ou CNH do proprietário</li>
-              <li><i class="fas fa-check"></i> Selo de inspeção anterior</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Kit GNV -->
-      <div class="col-lg-6 col-md-6 mb-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-cogs"></i>
-          </div>
-          <h3 class="service-title">Inclusão/Retirada Kit GNV</h3>
-          <p class="service-description">
-            Inspeção para instalação ou remoção do sistema de GNV no veículo.
-          </p>
-          <div class="service-details">
-            <h5>Documentos necessários:</h5>
-            <ul class="docs-list">
-              <li><i class="fas fa-check"></i> CRLV/CRV ou Nota Fiscal</li>
-              <li><i class="fas fa-check"></i> RG/CPF ou CNH do proprietário</li>
-              <li><i class="fas fa-check"></i> Notas fiscais e atestados</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Veículo Modificado -->
-      <div class="col-lg-6 col-md-6 mb-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-wrench"></i>
-          </div>
-          <h3 class="service-title">Veículo Modificado</h3>
-          <p class="service-description">
-            Inspeção para veículos com modificações estruturais, carroceria, chassi ou equipamentos.
-          </p>
-          <div class="service-details">
-            <h5>Documentos necessários:</h5>
-            <ul class="docs-list">
-              <li><i class="fas fa-check"></i> CRLV/CRV ou Nota Fiscal</li>
-              <li><i class="fas fa-check"></i> RG/CPF ou CNH do proprietário</li>
-              <li><i class="fas fa-check"></i> Notas fiscais da modificação</li>
-              <li><i class="fas fa-check"></i> CAT e ART (quando aplicável)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Inspeção Especial -->
-      <div class="col-lg-6 col-md-6 mb-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-bus"></i>
-          </div>
-          <h3 class="service-title">Inspeção Especial</h3>
-          <p class="service-description">
-            Inspeção para veículos escolares, ANTT, DER, moto-frete e URBS.
-          </p>
-          <div class="service-details">
-            <h5>Documentos necessários:</h5>
-            <ul class="docs-list">
-              <li><i class="fas fa-check"></i> CRLV/CRV ou Nota Fiscal</li>
-              <li><i class="fas fa-check"></i> RG/CPF ou CNH do proprietário</li>
-              <li><i class="fas fa-check"></i> Aferição do Tacógrafo (quando aplicável)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- Motor-casa -->
-      <div class="col-lg-6 col-md-6 mb-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-home"></i>
-          </div>
-          <h3 class="service-title">Motor-casa</h3>
-          <p class="service-description">
-            Inspeção para veículos adaptados para motor-casa conforme regulamentação.
-          </p>
-          <div class="service-details">
-            <h5>Documentos de referência:</h5>
-            <ul class="docs-list">
-              <li><i class="fas fa-external-link-alt"></i>
-                <a href="https://www.in.gov.br/materia/-/asset_publisher/Kujrw0TZC2Mb/content/id/51523850/do1-2018-11-23-resolucao-n-743-de-12-de-novembro-de-2018-51523534"
-                   target="_blank" class="reference-link">Resolução CONTRAN nº 743/2018</a>
-              </li>
-              <li><i class="fas fa-external-link-alt"></i>
-                <a href="https://www.in.gov.br/materia/-/asset_publisher/Kujrw0TZC2Mb/content/id/69873315"
-                   target="_blank" class="reference-link">Portaria DENATRAN</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- CITV -->
-      <div class="col-lg-6 col-md-6 mb-4">
-        <div class="service-card">
-          <div class="service-icon">
-            <i class="fas fa-globe-americas"></i>
-          </div>
-          <h3 class="service-title">CITV - Mercosul</h3>
-          <p class="service-description">
-            Certificado de Inspeção Técnica Veicular para transporte rodoviário internacional.
-          </p>
-          <div class="service-details">
-            <h5>Documentos necessários:</h5>
-            <ul class="docs-list">
-              <li><i class="fas fa-check"></i> CRLV/CRV ou Nota Fiscal</li>
-              <li><i class="fas fa-check"></i> RG/CPF ou CNH do proprietário</li>
-            </ul>
-            <div class="service-price-info">
-              <strong>Valor: R$ 500,00</strong>
-            </div>
-          </div>
+    <!-- Categorias de serviços -->
+    <div class="service-category" *ngFor="let category of categories">
+      <h3 class="category-title"><i class="fas {{ category.icon }}" aria-hidden="true"></i> {{ category.name }}</h3>
+      <div class="row g-4">
+        <div [class]="service.featured ? 'col-lg-12 mb-4' : 'col-lg-6 col-md-6 mb-4'" *ngFor="let service of category.services">
+          <inv-service-card [service]="service"></inv-service-card>
         </div>
       </div>
     </div>
@@ -220,10 +41,7 @@
 <section id="precos" class="pricing-section">
   <div class="container">
     <div class="row">
-      <div class="col-12 text-center mb-5">
-        <h2 class="section-title">Tabela de Preços</h2>
-        <p class="section-subtitle">Consulte os valores dos nossos serviços por unidade</p>
-      </div>
+      <inv-section-header styleVariant="plain" title="Tabela de Preços" subtitle="Consulte os valores dos nossos serviços por unidade"></inv-section-header>
     </div>
 
     <div class="row">
@@ -233,13 +51,13 @@
             <button class="nav-link active" id="curitiba-tab" data-bs-toggle="pill" data-bs-target="#curitiba"
                     type="button" role="tab" aria-controls="curitiba" aria-selected="true" appTrackClick="view_item"
                     [analyticsParams]="{ event_category: 'pricing', event_label: 'Tabela Curitiba', item_name: 'precos_curitiba', location: 'curitiba' }">
-              <i class="fas fa-building me-2"></i>
+              <i class="fas fa-building me-2" aria-hidden="true"></i>
               Curitiba
             </button>
             <button class="nav-link" id="campo-largo-tab" data-bs-toggle="pill" data-bs-target="#campo-largo"
                     type="button" role="tab" aria-controls="campo-largo" aria-selected="false" appTrackClick="view_item"
                     [analyticsParams]="{ event_category: 'pricing', event_label: 'Tabela Campo Largo', item_name: 'precos_campo_largo', location: 'campo_largo' }">
-              <i class="fas fa-building me-2"></i>
+              <i class="fas fa-building me-2" aria-hidden="true"></i>
               Campo Largo
             </button>
           </div>
@@ -263,23 +81,13 @@
 </section>
 
 <!-- CTA Section -->
-<section class="cta-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h3 class="cta-title">Precisa de mais informações?</h3>
-        <p class="cta-subtitle">Entre em contato conosco para esclarecimentos sobre nossos serviços</p>
-        <div class="cta-buttons">
-          <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-light btn-lg" appTrackClick="generate_lead"
-             [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Serviços', contact_method: 'whatsapp', location: 'curitiba', page_section: 'servicos_cta' }">
-            <i class="fab fa-whatsapp me-2"></i>WhatsApp
-          </a>
-          <a routerLink="/contato" class="btn btn-outline-light btn-lg" appTrackClick="select_content"
-             [analyticsParams]="{ event_category: 'cta', event_label: 'Contato Serviços', content_type: 'internal_cta', page_section: 'servicos_cta' }">
-            <i class="fas fa-phone me-2"></i>Contato
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<inv-cta title="Precisa de mais informações?" subtitle="Entre em contato conosco para esclarecimentos sobre nossos serviços">
+  <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-light btn-lg" appTrackClick="generate_lead"
+     [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Serviços', contact_method: 'whatsapp', location: 'curitiba', page_section: 'servicos_cta' }">
+    <i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Tirar Dúvida no WhatsApp
+  </a>
+  <a routerLink="/contato" class="btn btn-outline-light btn-lg" appTrackClick="select_content"
+     [analyticsParams]="{ event_category: 'cta', event_label: 'Contato Serviços', content_type: 'internal_cta', page_section: 'servicos_cta' }">
+    <i class="fas fa-phone me-2" aria-hidden="true"></i>Falar Sobre um Serviço
+  </a>
+</inv-cta>

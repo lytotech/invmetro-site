@@ -1,25 +1,26 @@
-/* Table Styling */
 .table-responsive {
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  border-radius: var(--inv-radius);
+  border: 1px solid var(--inv-line);
   overflow: hidden;
   margin-bottom: 2rem;
-  border: 1px solid #f0f0f0;
 }
 
 .table {
   margin-bottom: 0;
-  font-size: 0.95rem;
+  font-size: 0.92rem;
+  min-width: 760px;
+  color: var(--inv-ink);
 }
 
 .table thead th {
-  background: #28a745;
+  background: var(--inv-dark);
   color: white;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
   padding: 15px 12px;
   border: none;
   position: sticky;
@@ -28,32 +29,31 @@
 }
 
 .table tbody tr {
-  transition: all 0.3s ease;
+  transition: var(--inv-transition-base);
 }
 
 .table tbody tr:hover {
-  background-color: #f8f9fa;
-  transform: translateY(-1px);
+  background-color: var(--inv-primary-soft);
 }
 
 .table tbody th {
-  background: #f8f9fa;
-  color: #28a745;
+  background: var(--inv-subtle);
+  color: var(--inv-primary-dark);
   font-weight: 600;
   font-size: 0.9rem;
   padding: 12px;
-  border-right: 2px solid #28a745;
+  border-right: 1px solid var(--inv-line);
 }
 
 .table tbody td {
   padding: 12px;
-  color: #495057;
+  color: var(--inv-ink);
   font-weight: 500;
   vertical-align: middle;
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(40, 167, 69, 0.03);
+  background-color: var(--inv-subtle);
 }
 
 .table-striped tbody tr:nth-of-type(even) {
@@ -62,13 +62,11 @@
 
 /* Section Title */
 .section-title {
-  color: #28a745;
+  color: var(--inv-ink);
   font-weight: 700;
   text-align: center;
   margin: 2rem 0 1.5rem 0;
-  font-size: 1.3rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 1.15rem;
   position: relative;
 }
 
@@ -80,26 +78,19 @@
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background: #28a745;
+  background: var(--inv-accent);
   border-radius: 2px;
-}
-
-/* Price highlighting */
-.table tbody td:contains('R$') {
-  color: #28a745;
-  font-weight: 600;
 }
 
 /* Responsive improvements */
 @media (max-width: 768px) {
   .table-responsive {
-    border-radius: 8px;
     margin-bottom: 1.5rem;
   }
 
   .table thead th {
     padding: 12px 8px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   .table tbody th,
@@ -115,9 +106,13 @@
 }
 
 @media (max-width: 576px) {
+  .table-responsive {
+    margin-inline: -0.25rem;
+  }
+
   .table thead th {
     padding: 10px 6px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 
   .table tbody th,

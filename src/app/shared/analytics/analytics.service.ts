@@ -52,9 +52,7 @@ export class AnalyticsService {
 
   private currentPath(): string {
     const location = this.document.location;
-    const hashRoute = location.hash.startsWith('#/') ? location.hash.slice(1) : '';
-
-    return hashRoute || `${location.pathname}${location.search}${location.hash}`;
+    return `${location.pathname}${location.search}${location.hash}`;
   }
 
   private cleanParams(params: AnalyticsEventParams): AnalyticsEventParams {

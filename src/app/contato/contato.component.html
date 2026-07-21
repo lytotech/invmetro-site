@@ -1,199 +1,27 @@
 <!-- Hero Section -->
-<div class="hero-section">
-  <div class="container">
-    <div class="row align-items-center min-vh-40">
-      <div class="col-lg-6">
-        <h1 class="display-4 fw-bold text-white mb-4">Entre em Contato</h1>
-        <p class="lead text-white-50 mb-4">Estamos prontos para atender você nas nossas duas unidades em Curitiba e Campo Largo.</p>
-        <div class="d-flex gap-3">
-          <button (click)="scrollToSection('contato-rapido')" class="btn btn-light" appTrackClick="select_content"
-                  [analyticsParams]="{ event_category: 'cta', event_label: 'Fale Conosco', content_type: 'section_scroll', page_section: 'contato_hero' }">
-            <i class="fas fa-phone me-2"></i>Fale Conosco
-          </button>
-          <button (click)="scrollToSection('localizacao')" class="btn btn-outline-light" appTrackClick="select_content"
-                  [analyticsParams]="{ event_category: 'cta', event_label: 'Localização', content_type: 'section_scroll', page_section: 'contato_hero' }">
-            <i class="fas fa-map-marker-alt me-2"></i>Localização
-          </button>
-        </div>
-      </div>
-      <div class="col-lg-6">
-        <div class="hero-image text-center">
-          <i class="fas fa-comments fa-10x text-white opacity-25"></i>
-        </div>
-      </div>
-    </div>
+<inv-hero title="Entre em Contato" subtitle="Estamos prontos para atender você nas nossas duas unidades em Curitiba e Campo Largo." icon="fa-comments">
+  <div hero-actions class="d-flex gap-3">
+    <button (click)="scrollToSection('localizacao')" class="btn btn-light" appTrackClick="select_content"
+            [analyticsParams]="{ event_category: 'cta', event_label: 'Localização', content_type: 'section_scroll', page_section: 'contato_hero' }">
+      <i class="fas fa-map-marker-alt me-2" aria-hidden="true"></i>Ver Unidades e Endereços
+    </button>
+    <a href="https://api.whatsapp.com/send?phone=554133573939" target="_blank" class="btn btn-outline-light" appTrackClick="generate_lead"
+       [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Contato Hero', contact_method: 'whatsapp', location: 'curitiba', page_section: 'contato_hero' }">
+      <i class="fab fa-whatsapp me-2" aria-hidden="true"></i>Falar Agora no WhatsApp
+    </a>
   </div>
-</div>
-
-<!-- Contato Rápido -->
-<section id="contato-rapido" class="py-4">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center mb-4">
-        <h2 class="display-5 fw-bold text-success">Contato Rápido</h2>
-        <p class="lead text-muted">Escolha a melhor forma de entrar em contato conosco</p>
-      </div>
-    </div>
-
-    <div class="row g-4">
-      <div class="col-md-6">
-        <div class="contact-card h-100">
-          <div class="card-body text-center p-5">
-            <div class="contact-icon mb-4">
-              <i class="fab fa-whatsapp fa-3x text-success"></i>
-            </div>
-            <h4 class="card-title mb-3">WhatsApp</h4>
-            <p class="card-text text-muted mb-4">Fale conosco pelo WhatsApp para atendimento rápido</p>
-            <div class="d-grid gap-2">
-              <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-success" appTrackClick="generate_lead"
-                 [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Contato Curitiba', contact_method: 'whatsapp', location: 'curitiba', page_section: 'contato_rapido' }">
-                <i class="fab fa-whatsapp me-2"></i>Curitiba: (41) 3357-3939
-              </a>
-              <a href="https://api.whatsapp.com/send?phone=554135551300" class="btn btn-outline-success" appTrackClick="generate_lead"
-                 [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Contato Campo Largo', contact_method: 'whatsapp', location: 'campo_largo', page_section: 'contato_rapido' }">
-                <i class="fab fa-whatsapp me-2"></i>Campo Largo: (41) 3555-1300
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="contact-card h-100">
-          <div class="card-body text-center p-5">
-            <div class="contact-icon mb-4">
-              <i class="fas fa-envelope fa-3x text-success"></i>
-            </div>
-            <h4 class="card-title mb-3">E-mail</h4>
-            <p class="card-text text-muted mb-4">Envie suas dúvidas por e-mail</p>
-            <div class="d-grid gap-2">
-              <a href="mailto:invmetrocuritiba@gmail.com" class="btn btn-success" appTrackClick="generate_lead"
-                 [analyticsParams]="{ event_category: 'lead', event_label: 'E-mail Contato Curitiba', contact_method: 'email', location: 'curitiba', page_section: 'contato_rapido' }">
-                <i class="fas fa-envelope me-2"></i>invmetrocuritiba&#64;gmail.com
-              </a>
-              <a href="mailto:invmetrocampolargo@gmail.com" class="btn btn-outline-success" appTrackClick="generate_lead"
-                 [analyticsParams]="{ event_category: 'lead', event_label: 'E-mail Contato Campo Largo', contact_method: 'email', location: 'campo_largo', page_section: 'contato_rapido' }">
-                <i class="fas fa-envelope me-2"></i>invmetrocampolargo&#64;gmail.com
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</inv-hero>
 
 <!-- Localização -->
 <section id="localizacao" class="py-4 bg-light">
   <div class="container">
     <div class="row">
-      <div class="col-12 text-center mb-4">
-        <h2 class="display-5 fw-bold text-success">Nossas Unidades</h2>
-        <p class="lead text-muted">Visite uma de nossas unidades para atendimento presencial</p>
-      </div>
+      <inv-section-header [compact]="true" title="Nossas Unidades" subtitle="Visite uma de nossas unidades para atendimento presencial"></inv-section-header>
     </div>
 
     <div class="row g-4">
-      <!-- Unidade Curitiba -->
-      <div class="col-lg-6">
-        <div class="location-card h-100">
-          <div class="card-header-custom">
-            <div class="location-badge">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <h4 class="location-title">Invmetro Curitiba</h4>
-          </div>
-          <div class="card-body-custom">
-            <div class="location-details">
-              <div class="detail-item">
-                <div class="detail-icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="detail-content">
-                  <h6>Endereço</h6>
-                  <p>Bairro Atuba, próximo ao trevo da antiga Penha</p>
-                </div>
-              </div>
-              <div class="detail-item">
-                <div class="detail-icon">
-                  <i class="fab fa-whatsapp"></i>
-                </div>
-                <div class="detail-content">
-                  <h6>WhatsApp</h6>
-                  <p><a href="https://api.whatsapp.com/send?phone=554133573939" class="contact-link" appTrackClick="generate_lead"
-                        [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Unidade Curitiba', contact_method: 'whatsapp', location: 'curitiba', page_section: 'contato_localizacao' }">(41) 3357-3939</a></p>
-                </div>
-              </div>
-              <div class="detail-item">
-                <div class="detail-icon">
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <div class="detail-content">
-                  <h6>E-mail</h6>
-                  <p><a href="mailto:invmetrocuritiba@gmail.com" class="contact-link" appTrackClick="generate_lead"
-                        [analyticsParams]="{ event_category: 'lead', event_label: 'E-mail Unidade Curitiba', contact_method: 'email', location: 'curitiba', page_section: 'contato_localizacao' }">invmetrocuritiba&#64;gmail.com</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="map-wrapper">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.6884839280515!2d-49.19952741930228!3d-25.38175486272223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce8a966b32019%3A0x5059d9ecc7c315c9!2sInvmetro%20inspe%C3%A7%C3%A3o%20de%20seguran%C3%A7a%20veicular%20de%20Curitiba.%20Agendamentos%20e%20informa%C3%A7%C3%B5es%20por%20WhatsApp%3A%20(41)%203357-3939.!5e0!3m2!1sen!2sus!4v1705613215022!5m2!1sen!2sus"
-                width="100%" height="300" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Unidade Campo Largo -->
-      <div class="col-lg-6">
-        <div class="location-card h-100">
-          <div class="card-header-custom">
-            <div class="location-badge">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <h4 class="location-title">Invmetro Campo Largo</h4>
-          </div>
-          <div class="card-body-custom">
-            <div class="location-details">
-              <div class="detail-item">
-                <div class="detail-icon">
-                  <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <div class="detail-content">
-                  <h6>Endereço</h6>
-                  <p>Bairro Rondinha, em frente à Igreja da Rondinha</p>
-                </div>
-              </div>
-              <div class="detail-item">
-                <div class="detail-icon">
-                  <i class="fab fa-whatsapp"></i>
-                </div>
-                <div class="detail-content">
-                  <h6>WhatsApp</h6>
-                  <p><a href="https://api.whatsapp.com/send?phone=554135551300" class="contact-link" appTrackClick="generate_lead"
-                        [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Unidade Campo Largo', contact_method: 'whatsapp', location: 'campo_largo', page_section: 'contato_localizacao' }">(41) 3555-1300</a></p>
-                </div>
-              </div>
-              <div class="detail-item">
-                <div class="detail-icon">
-                  <i class="fas fa-envelope"></i>
-                </div>
-                <div class="detail-content">
-                  <h6>E-mail</h6>
-                  <p><a href="mailto:invmetrocampolargo@gmail.com" class="contact-link" appTrackClick="generate_lead"
-                        [analyticsParams]="{ event_category: 'lead', event_label: 'E-mail Unidade Campo Largo', contact_method: 'email', location: 'campo_largo', page_section: 'contato_localizacao' }">invmetrocampolargo&#64;gmail.com</a></p>
-                </div>
-              </div>
-            </div>
-            <div class="map-wrapper">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3602.807439536187!2d-49.50102282386473!3d-25.444700533474887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dd184d78709bf1%3A0x994060d231a4297e!2sInvmetro%20inspe%C3%A7%C3%A3o%20de%20seguran%C3%A7a%20veicular%20de%20Campo%20Largo.%20Contato%20via%20WhatsApp%3A%20(41)%203555-1300.!5e0!3m2!1sen!2sus!4v1705613074501!5m2!1sen!2sus"
-                width="100%" height="300" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
-        </div>
+      <div class="col-lg-6" *ngFor="let unit of units">
+        <inv-unit-card [unit]="unit" analyticsSection="contato_localizacao"></inv-unit-card>
       </div>
     </div>
   </div>

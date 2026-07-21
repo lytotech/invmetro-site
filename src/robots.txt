@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://invmetro.com.br/sitemap.xml

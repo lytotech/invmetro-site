@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UNITS } from '../shared/units.data';
 
 @Component({
     selector: 'app-contato',
@@ -7,6 +8,8 @@ import { Component } from '@angular/core';
     standalone: false
 })
 export class ContatoComponent {
+
+  units = UNITS;
 
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);

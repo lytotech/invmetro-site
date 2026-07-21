@@ -1,0 +1,25 @@
+<div class="service-card" [class.featured-service]="service.featured">
+  <div class="service-icon">
+    <i class="fas {{ service.icon }}" aria-hidden="true"></i>
+  </div>
+  <h4 class="service-title">{{ service.title }}</h4>
+  <p class="service-description">{{ service.description }}</p>
+  <div class="service-details">
+    <h5>{{ service.documentsLabel }}</h5>
+    <ul class="docs-list">
+      <li *ngFor="let doc of service.documents">
+        <ng-container *ngIf="doc.url; else plainDoc">
+          <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+          <a [href]="doc.url" target="_blank" class="reference-link">{{ doc.label }}</a>
+        </ng-container>
+        <ng-template #plainDoc>
+          <i class="fas fa-check" aria-hidden="true"></i>{{ doc.label }}
+        </ng-template>
+      </li>
+    </ul>
+  </div>
+  <a href="#precos" (click)="scrollToPricing($event)" class="service-price-link" appTrackClick="select_content"
+     [analyticsParams]="{ event_category: 'cta', event_label: 'Ver Tabela de Preços - ' + service.title, content_type: 'section_scroll', page_section: 'servicos_lista' }">
+    <i class="fas fa-tag me-1" aria-hidden="true"></i>Ver tabela de preços
+  </a>
+</div>

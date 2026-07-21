@@ -1,0 +1,61 @@
+.cta-section {
+  background: var(--inv-dark);
+  padding: var(--inv-space-3xl) 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 104, 48, 0.24), rgba(47, 143, 85, 0.18));
+  z-index: 1;
+}
+
+.cta-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-title {
+  font-size: var(--inv-text-h2);
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.cta-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Light variant */
+.cta-section--light {
+  background: var(--inv-subtle);
+}
+
+.cta-section--light::before {
+  display: none;
+}
+
+.cta-section--light .cta-title {
+  color: var(--inv-ink);
+}
+
+.cta-section--light .cta-subtitle {
+  color: var(--inv-muted);
+}
+
+@media (max-width: 576px) {
+  .cta-section {
+    padding: 2rem 0;
+  }
+}

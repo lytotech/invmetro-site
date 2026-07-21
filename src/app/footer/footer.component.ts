@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UNITS } from '../shared/units.data';
 
 @Component({
     selector: 'app-footer',
@@ -7,5 +8,8 @@ import { Component } from '@angular/core';
     standalone: false
 })
 export class FooterComponent {
+
+  currentYear = new Date().getFullYear();
+  units = UNITS;
 
 }

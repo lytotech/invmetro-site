@@ -1,0 +1,120 @@
+.service-card {
+  border-radius: var(--inv-radius);
+  border: 1px solid var(--inv-line);
+  box-shadow: none;
+  background: white;
+  transition: var(--inv-transition-fast);
+  padding: 1.5rem;
+  height: 100%;
+  position: relative;
+}
+
+.service-card:hover {
+  border-color: var(--inv-accent);
+}
+
+.service-card.featured-service {
+  border: 1px solid var(--inv-primary);
+}
+
+.service-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--inv-primary-soft);
+  border-radius: var(--inv-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  color: var(--inv-primary);
+  font-size: 1.45rem;
+}
+
+.service-title {
+  color: var(--inv-ink);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  color: var(--inv-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.service-details h5 {
+  color: var(--inv-primary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.docs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.docs-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background: var(--inv-subtle);
+  border: 1px solid var(--inv-line);
+  border-radius: var(--inv-radius-sm);
+  font-size: 0.9rem;
+}
+
+.docs-list li i {
+  color: var(--inv-accent);
+  font-size: 0.8rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+.reference-link {
+  color: var(--inv-accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.reference-link:hover {
+  color: var(--inv-accent-dark);
+  text-decoration: underline;
+}
+
+.service-price-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+  padding: 0.6rem 1rem;
+  background: var(--inv-primary-soft);
+  border-radius: var(--inv-radius-sm);
+  color: var(--inv-primary-dark);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: var(--inv-transition-fast);
+}
+
+.service-price-link:hover {
+  background: var(--inv-primary);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .service-card {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-card {
+    padding: 1rem;
+  }
+}
