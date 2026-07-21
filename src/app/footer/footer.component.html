@@ -19,55 +19,34 @@
             </p>
             <div class="footer-certifications">
               <span class="certification-badge">
-                <i class="fas fa-certificate"></i> CGCRE
+                <i class="fas fa-certificate" aria-hidden="true"></i> CGCRE
               </span>
               <span class="certification-badge">
-                <i class="fas fa-shield-alt"></i> Senatran
+                <i class="fas fa-shield-alt" aria-hidden="true"></i> Senatran
               </span>
             </div>
           </div>
         </div>
 
-        <!-- Curitiba Unit -->
-        <div class="col-lg-4 col-md-6 mb-4">
+        <!-- Units -->
+        <div class="col-lg-4 col-md-6 mb-4" *ngFor="let unit of units">
           <div class="footer-section">
-            <h5 class="footer-title">Unidade Curitiba</h5>
+            <h5 class="footer-title">{{ unit.name }}</h5>
             <div class="contact-item">
-              <i class="fab fa-whatsapp"></i>
-              <span>(41) 3357-3939</span>
+              <i class="fab fa-whatsapp" aria-hidden="true"></i>
+              <span>{{ unit.whatsappNumber }}</span>
             </div>
             <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <span>invmetrocuritiba&#64;gmail.com</span>
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+              <span>{{ unit.email }}</span>
             </div>
             <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>Estrada da Ribeira, 970 A<br>Bairro Atuba - Curitiba/PR</span>
+              <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+              <span>{{ unit.streetAddress }}<br>{{ unit.neighborhood }}, {{ unit.city }}</span>
             </div>
-            <a href="https://api.whatsapp.com/send?phone=554133573939" target="_blank" class="whatsapp-btn">
-              <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-          </div>
-        </div>
-
-        <!-- Campo Largo Unit -->
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="footer-section">
-            <h5 class="footer-title">Unidade Campo Largo</h5>
-            <div class="contact-item">
-              <i class="fab fa-whatsapp"></i>
-              <span>(41) 3555-1300</span>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <span>invmetrocampolargo&#64;gmail.com</span>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>BR 277 Km 114, 25 A<br>Bairro Rondinha - Campo Largo/PR</span>
-            </div>
-            <a href="https://api.whatsapp.com/send?phone=554135551300" target="_blank" class="whatsapp-btn">
-              <i class="fab fa-whatsapp"></i> WhatsApp
+            <a [href]="unit.whatsappLink" target="_blank" class="whatsapp-btn" appTrackClick="generate_lead"
+               [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Footer ' + unit.name, contact_method: 'whatsapp', location: unit.key, page_section: 'footer' }">
+              <i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp
             </a>
           </div>
         </div>
@@ -80,12 +59,15 @@
       <div class="row align-items-center">
         <div class="col-md-6">
           <p class="footer-copyright">
-            &copy; 2025 Invmetro. Todos os direitos reservados.
+            &copy; {{ currentYear }} Invmetro. Todos os direitos reservados.
+            <span class="footer-credit">
+              Feito por <a href="https://www.lyto.com.br" target="_blank" rel="noopener noreferrer">www.lyto.com.br</a>
+            </span>
           </p>
         </div>
         <div class="col-md-6">
           <div class="footer-schedule">
-            <i class="fas fa-clock"></i>
+            <i class="fas fa-clock" aria-hidden="true"></i>
             <span>Atendimento com hora marcada</span>
           </div>
         </div>

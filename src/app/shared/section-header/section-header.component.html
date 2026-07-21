@@ -1,0 +1,10 @@
+<div class="col-12 text-center" [class.mb-5]="!compact" [class.mb-4]="compact">
+  <ng-container *ngIf="styleVariant === 'plain'; else displayVariant">
+    <h2 class="section-title">{{ title }}</h2>
+    <p class="section-subtitle">{{ subtitle }}</p>
+  </ng-container>
+  <ng-template #displayVariant>
+    <h2 class="display-5 fw-bold text-success">{{ title }}</h2>
+    <p class="lead text-muted">{{ subtitle }}</p>
+  </ng-template>
+</div>

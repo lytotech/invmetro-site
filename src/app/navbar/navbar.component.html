@@ -1,8 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
   <div class="container">
     <!-- Logo -->
-    <a class="navbar-brand" routerLink="/inicio">
+    <a class="navbar-brand" routerLink="/inicio" appTrackClick="select_content"
+       [analyticsParams]="{ event_category: 'navigation', event_label: 'Logo', content_type: 'navbar_link' }">
       <img src="assets/logo.png" alt="Invmetro" class="navbar-logo me-2">
+      <span class="brand-text">Invmetro</span>
     </a>
 
     <!-- Mobile Toggle Button -->
@@ -15,33 +17,38 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/inicio" routerLinkActive="active"
+          <a class="nav-link" routerLink="/inicio" routerLinkActive="active" appTrackClick="select_content"
+             [analyticsParams]="{ event_category: 'navigation', event_label: 'Início', content_type: 'navbar_link' }"
              [routerLinkActiveOptions]="{exact: true}">
-            <i class="fas fa-home me-1"></i>
+            <i class="fas fa-home me-1" aria-hidden="true"></i>
             Início
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/servicos" routerLinkActive="active">
-            <i class="fas fa-tools me-1"></i>
+          <a class="nav-link" routerLink="/servicos" routerLinkActive="active" appTrackClick="select_content"
+             [analyticsParams]="{ event_category: 'navigation', event_label: 'Serviços', content_type: 'navbar_link' }">
+            <i class="fas fa-tools me-1" aria-hidden="true"></i>
             Serviços
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/sobre" routerLinkActive="active">
-            <i class="fas fa-info-circle me-1"></i>
+          <a class="nav-link" routerLink="/sobre" routerLinkActive="active" appTrackClick="select_content"
+             [analyticsParams]="{ event_category: 'navigation', event_label: 'A Invmetro', content_type: 'navbar_link' }">
+            <i class="fas fa-info-circle me-1" aria-hidden="true"></i>
             A Invmetro
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/contato" routerLinkActive="active">
-            <i class="fas fa-phone me-1"></i>
+          <a class="nav-link nav-link-cta" routerLink="/contato" routerLinkActive="active" appTrackClick="select_content"
+             [analyticsParams]="{ event_category: 'navigation', event_label: 'Contato', content_type: 'navbar_cta' }">
+            <i class="fas fa-phone me-1" aria-hidden="true"></i>
             Contato
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/duvidas" routerLinkActive="active">
-            <i class="fas fa-question-circle me-1"></i>
+          <a class="nav-link" routerLink="/duvidas" routerLinkActive="active" appTrackClick="select_content"
+             [analyticsParams]="{ event_category: 'navigation', event_label: 'FAQ', content_type: 'navbar_link' }">
+            <i class="fas fa-question-circle me-1" aria-hidden="true"></i>
             FAQ
           </a>
         </li>

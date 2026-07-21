@@ -6,13 +6,38 @@ import {SobreComponent} from "./sobre/sobre.component";
 import {FaqComponent} from "./faq/faq.component";
 import {ContatoComponent} from "./contato/contato.component";
 
+const homeSeo = {
+  title: 'Invmetro — Inspeção Veicular em Curitiba e Campo Largo',
+  description: 'Instituição técnica acreditada pela CGCRE e licenciada pela SENATRAN. Inspeção de Segurança Veicular (ISV) em Curitiba e Campo Largo desde 2009.'
+};
+
 const routes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'inicio', component: HomeComponent},
-  {path: 'servicos', component: ServicosComponent},
-  {path: 'sobre', component: SobreComponent},
-  {path: 'contato', component: ContatoComponent},
-  {path: 'duvidas', component: FaqComponent},
+  {path: '', component: HomeComponent, data: homeSeo},
+  {path: 'inicio', component: HomeComponent, data: {...homeSeo, canonicalPath: '/'}},
+  {
+    path: 'servicos', component: ServicosComponent, data: {
+      title: 'Serviços de Inspeção Veicular | Invmetro',
+      description: 'Alteração de potência, veículo modificado, GNV, sinistro, inspeção especial e CITV Mercosul. Conheça todos os serviços de inspeção veicular da Invmetro.'
+    }
+  },
+  {
+    path: 'sobre', component: SobreComponent, data: {
+      title: 'Sobre a Invmetro — Tradição desde 2009',
+      description: 'Conheça a história da Invmetro: instituição técnica licenciada pela SENATRAN e acreditada pela CGCRE, com unidades em Curitiba e Campo Largo.'
+    }
+  },
+  {
+    path: 'contato', component: ContatoComponent, data: {
+      title: 'Contato | Invmetro Curitiba e Campo Largo',
+      description: 'Fale com a Invmetro pelo WhatsApp, e-mail ou visite uma de nossas unidades em Curitiba e Campo Largo. Agendamento com hora marcada.'
+    }
+  },
+  {
+    path: 'duvidas', component: FaqComponent, data: {
+      title: 'Perguntas Frequentes | Invmetro',
+      description: 'Tire suas dúvidas sobre agendamento, pagamento, documentos necessários e o processo de inspeção veicular na Invmetro.'
+    }
+  },
   {path: '**', redirectTo: 'inicio'}
 ];
 

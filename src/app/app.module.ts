@@ -13,7 +13,8 @@ import { TableCampoLargoComponent } from './table-campo-largo/table-campo-largo.
 import { SobreComponent } from './sobre/sobre.component';
 import { FaqComponent } from './faq/faq.component';
 import { ContatoComponent } from './contato/contato.component';
-import {CommonModule, HashLocationStrategy, LocationStrategy} from "@angular/common";
+import { CommonModule } from "@angular/common";
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -32,9 +33,9 @@ import {CommonModule, HashLocationStrategy, LocationStrategy} from "@angular/com
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

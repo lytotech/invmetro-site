@@ -1,4 +1,5 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { UNITS } from '../shared/units.data';
 
 @Component({
     selector: 'app-sobre',
@@ -6,15 +7,11 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
     styleUrls: ['./sobre.component.css'],
     standalone: false
 })
-export class SobreComponent implements OnInit, AfterViewInit {
+export class SobreComponent {
 
-  ngOnInit() {
-  }
-
-  ngAfterViewInit() {
-    // Inicializar animação dos números após a view estar carregada
-    this.animateNumbers();
-  }
+  units = UNITS;
+  readonly foundingYear = 2009;
+  readonly yearsOfExperience = new Date().getFullYear() - this.foundingYear;
 
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
@@ -24,39 +21,6 @@ export class SobreComponent implements OnInit, AfterViewInit {
         block: 'start'
       });
     }
-  }
-
-  private animateNumbers() {
-    const statNumbers = document.querySelectorAll('.stat-number');
-
-    statNumbers.forEach((statNumber: any) => {
-      const target = parseInt(statNumber.getAttribute('data-target'));
-      const duration = 2000; // 2 segundos
-      const increment = target / (duration / 16); // 60 FPS aproximadamente
-      let current = 0;
-
-      const updateNumber = () => {
-        current += increment;
-        if (current < target) {
-          statNumber.textContent = Math.floor(current).toString();
-          requestAnimationFrame(updateNumber);
-        } else {
-          statNumber.textContent = target.toString();
-        }
-      };
-
-      // Iniciar animação quando o elemento estiver visível
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            updateNumber();
-            observer.unobserve(entry.target);
-          }
-        });
-      });
-
-      observer.observe(statNumber);
-    });
   }
 
 }

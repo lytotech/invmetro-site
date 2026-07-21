@@ -5,13 +5,19 @@
       <div class="col-lg-6">
         <div class="hero-content">
           <h1 class="hero-title">Inspeção Veicular com Qualidade e Confiança</h1>
-          <p class="hero-subtitle">Mais de 16 anos de experiência em inspeções técnicas. Acreditada pela CGCRE e licenciada pelo SENATRAN para todo o Brasil.</p>
+          <p class="hero-subtitle">Mais de {{ yearsOfExperience }} anos de experiência em inspeções técnicas. Acreditada pela CGCRE e licenciada pelo SENATRAN para todo o Brasil.</p>
+          <div class="hero-badges">
+            <span class="hero-badge"><i class="fas fa-certificate" aria-hidden="true"></i> Acreditação CGCRE</span>
+            <span class="hero-badge"><i class="fas fa-shield-alt" aria-hidden="true"></i> Licença SENATRAN</span>
+          </div>
           <div class="hero-buttons">
-            <a class="btn btn-light btn-lg" routerLink="/contato">
-              <i class="fas fa-calendar-alt me-2"></i>Agendar Inspeção
+            <a class="btn btn-light btn-lg" routerLink="/contato" appTrackClick="select_content"
+               [analyticsParams]="{ event_category: 'cta', event_label: 'Agendar Inspeção', content_type: 'internal_cta', page_section: 'home_hero' }">
+              <i class="fas fa-calendar-alt me-2" aria-hidden="true"></i>Agendar Inspeção
             </a>
-            <a class="btn btn-outline-light btn-lg" routerLink="/servicos">
-              <i class="fas fa-list me-2"></i>Nossos Serviços
+            <a class="btn btn-outline-light btn-lg" routerLink="/servicos" appTrackClick="select_content"
+               [analyticsParams]="{ event_category: 'cta', event_label: 'Nossos Serviços', content_type: 'internal_cta', page_section: 'home_hero' }">
+              <i class="fas fa-list me-2" aria-hidden="true"></i>Nossos Serviços
             </a>
           </div>
         </div>
@@ -20,7 +26,7 @@
         <div class="hero-image">
           <div class="hero-stats">
             <div class="stat-item">
-              <div class="stat-number">16+</div>
+              <div class="stat-number">{{ yearsOfExperience }}+</div>
               <div class="stat-label">Anos</div>
             </div>
             <div class="stat-item">
@@ -42,17 +48,14 @@
 <section class="features-section">
   <div class="container">
     <div class="row">
-      <div class="col-12 text-center mb-5">
-        <h2 class="section-title">Por que escolher a Invmetro?</h2>
-        <p class="section-subtitle">Credibilidade e qualidade que fazem a diferença</p>
-      </div>
+      <inv-section-header styleVariant="plain" title="Por que escolher a Invmetro?" subtitle="Credibilidade e qualidade que fazem a diferença"></inv-section-header>
     </div>
 
     <div class="row g-4">
       <div class="col-lg-3 col-md-6">
         <div class="feature-card text-center">
           <div class="feature-icon">
-            <i class="fas fa-clock"></i>
+            <i class="fas fa-clock" aria-hidden="true"></i>
           </div>
           <h4 class="feature-title">Hora Marcada</h4>
           <p class="feature-description">Atendimento pontual sem filas. Agende seu horário e seja atendido no horário.</p>
@@ -61,7 +64,7 @@
       <div class="col-lg-3 col-md-6">
         <div class="feature-card text-center">
           <div class="feature-icon">
-            <i class="fas fa-certificate"></i>
+            <i class="fas fa-certificate" aria-hidden="true"></i>
           </div>
           <h4 class="feature-title">Acreditação</h4>
           <p class="feature-description">Acreditada pela CGCRE e licenciada pelo SENATRAN para todo o Brasil.</p>
@@ -70,16 +73,16 @@
       <div class="col-lg-3 col-md-6">
         <div class="feature-card text-center">
           <div class="feature-icon">
-            <i class="fas fa-users"></i>
+            <i class="fas fa-users" aria-hidden="true"></i>
           </div>
           <h4 class="feature-title">Experiência</h4>
-          <p class="feature-description">Mais de 16 anos no mercado com equipe técnica especializada.</p>
+          <p class="feature-description">Mais de {{ yearsOfExperience }} anos no mercado com equipe técnica especializada.</p>
         </div>
       </div>
       <div class="col-lg-3 col-md-6">
         <div class="feature-card text-center">
           <div class="feature-icon">
-            <i class="fas fa-map-marker-alt"></i>
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
           </div>
           <h4 class="feature-title">Localização</h4>
           <p class="feature-description">Duas unidades estratégicas em Curitiba e Campo Largo.</p>
@@ -93,10 +96,7 @@
 <section class="services-section">
   <div class="container">
     <div class="row">
-      <div class="col-12 text-center mb-5">
-        <h2 class="section-title">Nossos Principais Serviços</h2>
-        <p class="section-subtitle">Soluções completas em inspeção veicular</p>
-      </div>
+      <inv-section-header styleVariant="plain" title="Nossos Principais Serviços" subtitle="Soluções completas em inspeção veicular"></inv-section-header>
     </div>
 
     <div class="row g-4">
@@ -109,12 +109,13 @@
             <h5 class="service-title">Inspeção GNV</h5>
             <p class="service-description">Homologação e inspeção periódica anual para veículos com sistema de Gás Natural Veicular.</p>
             <ul class="service-features">
-              <li><i class="fas fa-check"></i> Inspeção periódica obrigatória</li>
-              <li><i class="fas fa-check"></i> Inclusão e retirada do kit</li>
-              <li><i class="fas fa-check"></i> Avaliação completa do sistema</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i> Inspeção periódica obrigatória</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i> Inclusão e retirada do kit</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i> Avaliação completa do sistema</li>
             </ul>
-            <a routerLink="/servicos" class="btn btn-success">
-              <i class="fas fa-arrow-right me-2"></i>Saiba mais
+            <a routerLink="/servicos" class="btn btn-success" appTrackClick="select_content"
+               [analyticsParams]="{ event_category: 'service_card', event_label: 'Inspeção GNV', content_type: 'service_cta', page_section: 'home_services' }">
+              <i class="fas fa-arrow-right me-2" aria-hidden="true"></i>Saiba mais
             </a>
           </div>
         </div>
@@ -129,12 +130,13 @@
             <h5 class="service-title">Veículo Sinistro</h5>
             <p class="service-description">Inspeção para veículos que se envolveram em acidentes ou foram bloqueados por seguradoras.</p>
             <ul class="service-features">
-              <li><i class="fas fa-check"></i> Avaliação pós-acidente</li>
-              <li><i class="fas fa-check"></i> Regularização de bloqueios</li>
-              <li><i class="fas fa-check"></i> Liberação para circulação</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i> Avaliação pós-acidente</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i> Regularização de bloqueios</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i> Liberação para circulação</li>
             </ul>
-            <a routerLink="/servicos" class="btn btn-success">
-              <i class="fas fa-arrow-right me-2"></i>Saiba mais
+            <a routerLink="/servicos" class="btn btn-success" appTrackClick="select_content"
+               [analyticsParams]="{ event_category: 'service_card', event_label: 'Veículo Sinistro', content_type: 'service_cta', page_section: 'home_services' }">
+              <i class="fas fa-arrow-right me-2" aria-hidden="true"></i>Saiba mais
             </a>
           </div>
         </div>
@@ -149,12 +151,13 @@
             <h5 class="service-title">Veículo Modificado</h5>
             <p class="service-description">Inspeção para veículos com modificações estruturais, mudança de carroceria e adaptações.</p>
             <ul class="service-features">
-              <li><i class="fas fa-check"></i> Mudança de carroceria</li>
-              <li><i class="fas fa-check"></i> Modificações estruturais</li>
-              <li><i class="fas fa-check"></i> Adaptações especiais</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i> Mudança de carroceria</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i> Modificações estruturais</li>
+              <li><i class="fas fa-check" aria-hidden="true"></i> Adaptações especiais</li>
             </ul>
-            <a routerLink="/servicos" class="btn btn-success">
-              <i class="fas fa-arrow-right me-2"></i>Saiba mais
+            <a routerLink="/servicos" class="btn btn-success" appTrackClick="select_content"
+               [analyticsParams]="{ event_category: 'service_card', event_label: 'Veículo Modificado', content_type: 'service_cta', page_section: 'home_services' }">
+              <i class="fas fa-arrow-right me-2" aria-hidden="true"></i>Saiba mais
             </a>
           </div>
         </div>
@@ -163,8 +166,9 @@
 
     <div class="row mt-4">
       <div class="col-12 text-center">
-        <a routerLink="/servicos" class="btn btn-outline-success btn-lg">
-          <i class="fas fa-list me-2"></i>Ver Todos os Serviços
+        <a routerLink="/servicos" class="btn btn-outline-success btn-lg" appTrackClick="select_content"
+           [analyticsParams]="{ event_category: 'cta', event_label: 'Ver Todos os Serviços', content_type: 'internal_cta', page_section: 'home_services' }">
+          <i class="fas fa-list me-2" aria-hidden="true"></i>Ver Todos os Serviços
         </a>
       </div>
     </div>
@@ -179,14 +183,16 @@
         <div class="about-content">
           <h3 class="about-title">Invmetro: Tradição e Qualidade</h3>
           <p class="about-description">
-            Desde 2009 no mercado, a Invmetro se consolidou como referência em inspeção veicular. 
-            Somos uma instituição técnica acreditada pela CGCRE e licenciada pelo SENATRAN, 
-            oferecendo serviços especializados com a máxima qualidade e credibilidade.
+            Desde 2009 no mercado, a Invmetro se consolidou como referência em inspeção veicular.
+            Contamos com Engenheiros e Técnicos especializados, como manda a legislação, e vamos além
+            da inspeção: atuamos como consultoria, esclarecendo dúvidas e ajudando na resolução dos
+            procedimentos. Somos uma instituição técnica licenciada e autorizada pela SENATRAN e
+            acreditada pela CGCRE para realizar Inspeções de Segurança Veicular em todo o Brasil.
           </p>
           <div class="about-highlights">
             <div class="highlight-item">
               <div class="highlight-icon">
-                <i class="fas fa-shield-alt"></i>
+                <i class="fas fa-shield-alt" aria-hidden="true"></i>
               </div>
               <div class="highlight-content">
                 <h6>100% Licenciada</h6>
@@ -195,7 +201,7 @@
             </div>
             <div class="highlight-item">
               <div class="highlight-icon">
-                <i class="fas fa-user-graduate"></i>
+                <i class="fas fa-user-graduate" aria-hidden="true"></i>
               </div>
               <div class="highlight-content">
                 <h6>Equipe Especializada</h6>
@@ -204,7 +210,7 @@
             </div>
             <div class="highlight-item">
               <div class="highlight-icon">
-                <i class="fas fa-handshake"></i>
+                <i class="fas fa-handshake" aria-hidden="true"></i>
               </div>
               <div class="highlight-content">
                 <h6>Consultoria Completa</h6>
@@ -213,8 +219,9 @@
             </div>
           </div>
           <div class="about-actions">
-            <a routerLink="/sobre" class="btn btn-success btn-lg">
-              <i class="fas fa-info-circle me-2"></i>Conheça Nossa História
+            <a routerLink="/sobre" class="btn btn-success btn-lg" appTrackClick="select_content"
+               [analyticsParams]="{ event_category: 'cta', event_label: 'Conheça Nossa História', content_type: 'internal_cta', page_section: 'home_about' }">
+              <i class="fas fa-info-circle me-2" aria-hidden="true"></i>Conheça Nossa História
             </a>
           </div>
         </div>
@@ -231,24 +238,17 @@
 </section>
 
 <!-- CTA Section -->
-<section class="cta-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-12 text-center">
-        <h3 class="cta-title">Pronto para agendar sua inspeção?</h3>
-        <p class="cta-subtitle">Entre em contato conosco e garanta a regularização do seu veículo</p>
-        <div class="cta-buttons">
-          <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-light btn-lg">
-            <i class="fab fa-whatsapp me-2"></i>WhatsApp Curitiba
-          </a>
-          <a href="https://api.whatsapp.com/send?phone=554135551300" class="btn btn-outline-light btn-lg">
-            <i class="fab fa-whatsapp me-2"></i>WhatsApp Campo Largo
-          </a>
-          <a routerLink="/contato" class="btn btn-light btn-lg">
-            <i class="fas fa-phone me-2"></i>Outras Formas de Contato
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<inv-cta title="Pronto para agendar sua inspeção?" subtitle="Entre em contato conosco e garanta a regularização do seu veículo">
+  <a href="https://api.whatsapp.com/send?phone=554133573939" class="btn btn-light btn-lg" appTrackClick="generate_lead"
+     [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Curitiba', contact_method: 'whatsapp', location: 'curitiba', page_section: 'home_cta' }">
+    <i class="fab fa-whatsapp me-2" aria-hidden="true"></i>WhatsApp Curitiba
+  </a>
+  <a href="https://api.whatsapp.com/send?phone=554135551300" class="btn btn-outline-light btn-lg" appTrackClick="generate_lead"
+     [analyticsParams]="{ event_category: 'lead', event_label: 'WhatsApp Campo Largo', contact_method: 'whatsapp', location: 'campo_largo', page_section: 'home_cta' }">
+    <i class="fab fa-whatsapp me-2" aria-hidden="true"></i>WhatsApp Campo Largo
+  </a>
+  <a routerLink="/contato" class="btn btn-light btn-lg" appTrackClick="select_content"
+     [analyticsParams]="{ event_category: 'cta', event_label: 'Outras Formas de Contato', content_type: 'internal_cta', page_section: 'home_cta' }">
+    <i class="fas fa-phone me-2" aria-hidden="true"></i>Outras Formas de Contato
+  </a>
+</inv-cta>
